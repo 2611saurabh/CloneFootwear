@@ -1,0 +1,9 @@
+
+
+<div class="ekart--search--product">
+    <input class="ekart-search-product-input" #searchInput (input)="updateSearchText(searchInput)" placeholder="Search Here....">
+</div>
+<div class="ekart-search-result-for">
+    <p *ngIf="searchText.length > 0"><strong>Search result for:</strong> {{ searchText }}</p>
+</div>
+

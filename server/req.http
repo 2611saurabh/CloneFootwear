@@ -1,0 +1,130 @@
+
+### get data for all user
+get http://localhost:4000/user-api/users
+
+
+### get data by specific user
+get http://localhost:4000/user-api/user/saurabh
+
+###
+get http://localhost:4000/user-api/user-cart/sanvi
+
+###
+put http://localhost:4000/user-api/user/gaurav
+Content-Type: application/json
+
+{
+  
+  "id": 2,
+  "name": "Nike React Miler",
+  "brand": "NIKE",
+  "gender": "MEN",
+  "category": "RUNNING",
+  "size": "6, 7, 8, 9, 10",
+  "color": "White, Blue, Black",
+  "price": 130,
+  "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-5cc7de3b-2afc-49c2-a1e4-0508997d09e6/react-miler-mens-running-shoe-DgF6nr.jpg"
+
+}
+### 
+
+post http://localhost:4000/user-api/user
+Content-Type: application/json
+
+
+{
+    "username":"saurabh",
+    "password":"saurabh",
+    "email": "saurabh.kr026@gmail.com"
+}
+
+### for Product "White, Green, Brown, Red"
+###"6, 7, 8, 9, 10"
+post http://localhost:4000/product-api/product
+Content-Type: application/json
+
+{
+    "id": 34,
+      "name": "Michael Feburary SK8-HH",
+      "brand": "Vans",
+      "gender": "MEN",
+      "category": "CASUAL",
+      "size": "6, 7, 8, 9, 10, 11, 12",
+      "color": "White, Green, Brown, Red",
+      "price": 7200,
+      "imageURL": "https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$"
+    
+
+}
+
+###get product
+get http://localhost:4000/product-api/product
+
+###
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "username":"gaurav",
+    "password":"gaura"
+}
+
+###
+post http://localhost:4000/seller-api/seller
+Content-Type: application/json
+
+{
+    "username":"seller",
+    "password":"seller",
+    "email":"seller@mail.com"
+    
+}
+
+###
+post http://localhost:4000/seller-api/login
+Content-Type: application/json
+
+{
+    "username":"seller",
+    "password":"seller"
+}
+
+###
+put http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "username":"ravi",
+    "email":"ravikumar@mail.com",
+    "age":28
+}
+
+
+###
+DELETE http://localhost:4000/user-api/user/ravi
+
+
+### deleting item from cart
+
+post http://localhost:4000/user-api/user/saurabh
+
+
+###
+
+get http://localhost:4000/product-api/product?price='WOMEN'
+
+
+### delete Product
+delete http://localhost:4000/product-api/product/65e446556153b30f76bb12ee
+
+
+### cart data 
+get http://localhost:4000/user-api/65e1c9a36153b30f76bb12ac/cart
+
+
+
+###
+get http://localhost:4000/user-api/user/gaurav
+
+###
+get http://localhost:4000/product-api/product/8

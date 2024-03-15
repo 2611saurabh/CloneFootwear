@@ -1,0 +1,65 @@
+
+<div class="container">
+  <div class="center">
+<h1>User Registration</h1>
+
+ <!-- dupliacte user existence related message  -->
+@if(duplicateUserStatus===true){
+  <p class="text-danger fs-2 text-center">Nikal Laude</p>
+}@else{
+  
+}
+<!-- class="w-50 d-block mx-auto mt-5" -->
+<form
+  
+  [formGroup]="user"
+  (ngSubmit)="onSubmitUser()"
+> 
+  <!-- username -->
+  <div class="txt_field">
+    <input type="text" name="username" formControlName="username" placeholder="Username" required>
+                <span></span>
+                <label>Username</label>
+  </div>
+
+  <div *ngIf="username.invalid && (username.dirty || username.touched)">
+    <p *ngIf="username?.errors?.['required']" [ngStyle]="{color:'red'}">Username Required</p>
+    
+</div>
+<!-- password --> 
+   <div class="txt_field">
+    <input type="email" formControlName="email" name="email" placeholder="Email@mail.com" required>
+    <span></span>
+    <label>Email</label>
+  </div>
+
+  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+    <p *ngIf="email?.errors?.['required']" [ngStyle]="{color:'red'}">Email Required</p>
+    <p *ngIf="password?.errors?.['email']" [ngStyle]="{color:'red'}">Email Type required</p>
+    
+</div>
+
+   <!-- email -->
+  <div class="txt_field">
+    <input type="password" formControlName="password" name="password" placeholder="Password" required>
+    <span></span>
+    <label>Password</label>
+  </div>  
+
+  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+    <p *ngIf="password?.errors?.['required']" [ngStyle]="{color:'red'}">Password Required</p>
+    <p *ngIf="password?.errors?.['minLength']" [ngStyle]="{color:'red'}">Password must be length 6</p>
+    
+</div>
+
+  <button type="submit" class="btn btn-success d-block mx-auto" value="Sign Up" [disabled]="user.invalid">Register</button>
+  <!-- <input name="submit" type="Submit" value="Sign Up"> -->
+
+  <div class="signup_link">
+    Having Account  ? <a class="anchor" routerLink="login" (click)="goToLogin()"> Login</a>
+ </div>
+</form>
+
+</div>
+</div>
+

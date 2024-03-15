@@ -1,0 +1,35 @@
+<div class="filter-container">
+    <span>Filter: </span>
+
+
+    <!--When radio button is clicked selectedfilterradiobutton is updated and onselectedfilteredradiobuttonchanged function is called  -->
+    <input 
+        type="radio" 
+        name="filter" 
+        value="all"    
+        [(ngModel)]="selectedFilterRadioButton" 
+        (change)="onSelectedFilterRadioButtonChanged()" placeholder="l">
+
+    <span>{{'High To Low('+highToLow+')'}}</span>
+
+
+    <!-- here we use value because instcok and outstock datatype is booelan -->
+    <input 
+        type="radio" 
+        name="filter" 
+        value="true" 
+        [(ngModel)]="selectedFilterRadioButton" 
+        (change)="onSelectedFilterRadioButtonChanged()" placeholder="k">
+
+    <span>{{'Low To High('+lowToHigh+')'}}</span>
+
+    <!-- <input 
+        type="radio" 
+        name="filter" 
+        value="false" 
+        [(ngModel)]="selectedFilterRadioButton" 
+        (change)="onSelectedFilterRadioButtonChanged()" placeholder="k"> -->
+        
+   
+
+</div>  

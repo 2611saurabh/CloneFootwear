@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="center">
+        <h1>Login</h1>
+        @if(userCredentialsError.userCredErrStatus){
+          <p class="text-danger fs-3 text-center">{{userCredentialsError.userCredErrMsg}}</p>
+        }
+        <form [formGroup]="userCredentials"
+        (ngSubmit)="onSubmitUser()">
+
+            <!-- //UserName  -->
+            <div class="txt_field">
+                <input type="text" name="username" formControlName="username" placeholder="Enter your username">
+                <span></span>
+                <label>Username</label>
+            </div>
+
+            <div *ngIf="username.invalid && (username.dirty || username.touched)">
+              <p *ngIf="username?.errors?.['required']" [ngStyle]="{color:'red'}">Username Required</p>
+          </div>
+
+             <!-- //Password -->
+            <div class="txt_field">
+                <input type="password" name="password" formControlName="password" placeholder="Password must be 6 character">
+                <span></span>
+                <label>Password</label>
+            </div>
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <p *ngIf="password?.errors?.['required']" [ngStyle]="{color:'red'}">Password  Required</p>
+                <p *ngIf="password?.errors?.['minlength']" [ngStyle]="{color:'red'}">Password must be length 6</p>
+                
+            </div>
+            
+            <input name="submit" class="login" type="Submit" value="Log In" [disabled]="userCredentials.invalid">
+            <div class="signup_link">
+               Dont have an Account ? <a routerLink="signup" (click)="goToRegister()">Register Account</a>
+            </div>
+            <div class="signup_link">
+              Login as Seller ? <a routerLink="seller" (click)="goToSeller()">Seller Account</a>
+           </div>
+        </form>
+    </div>
+</div>
+
+
+

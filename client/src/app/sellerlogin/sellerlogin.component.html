@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="center">
+        <h1>Seller Login</h1>
+        @if(sellerCredentialsError.sellerCredErrStatus){
+            <p class="text-danger fs-3 text-center">{{sellerCredentialsError.sellerCredErrMsg}}</p>
+          }
+        
+        <form [formGroup]="sellerCredentials"
+        (ngSubmit)="onSubmitSeller()">
+
+            <!-- UserName  -->
+            <div class="txt_field">
+                <input type="text" name="username" formControlName="username" placeholder="Enter your username">
+                <span></span>
+                <label>Username</label>
+            </div>
+
+            <!-- Validators For UserName -->
+            <div *ngIf="username.invalid && (username.dirty || password.touched)">
+              <p *ngIf="username?.errors?.['required']" [ngStyle]="{color:'red'}">UserId  Required</p>
+              
+              
+          </div>
+
+             <!-- Password -->
+            <div class="txt_field">
+                <input type="password" name="password" formControlName="password" placeholder="Password">
+                <span></span>
+                <label>Password</label>
+            </div>
+
+            <!-- Validators For Password -->
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <p *ngIf="password?.errors?.['required']" [ngStyle]="{color:'red'}">Password  Required</p>
+                <p *ngIf="password?.errors?.['minLength']" [ngStyle]="{color:'red'}">Password must be length 6</p>
+                
+            </div>
+            
+            <input name="submit" type="Submit" value="Sign Up" [disabled]="sellerCredentials.invalid">
+            <div class="signup_link">
+              Login as User ? <a (click)="goToLogin()">User Account</a>
+           </div>
+        </form>
+    </div>
+</div>

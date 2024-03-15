@@ -1,0 +1,122 @@
+<div class="container main">
+    <div class="center">
+  <h1>Product Detail</h1>
+  
+  <form
+    
+    [formGroup]="Product"
+    (ngSubmit)="onSubmitProduct()"
+    
+  > 
+   
+  <!-- Product Name --> 
+     <div class="txt_field">
+      <input type="text" formControlName="name" placeholder="Enter Product Name" required>
+      <span></span>
+     
+    </div>
+
+    <!-- validators For Name -->
+    <div class="valid" *ngIf="name.invalid && (name.dirty || name.touched)">
+      <p *ngIf="name?.errors?.['required']" [ngStyle]="{color:'red'}">Name Required</p>
+  </div>
+  
+    
+
+    <!-- Product Brand -->
+    <div class="txt_field">
+        <input type="text" name="id" formControlName="brand" placeholder="Brand" required>
+                    <span></span>
+                    
+      </div>
+
+      <!-- Validators For Brand -->
+      <div class="valid" *ngIf="brand.invalid && (brand.dirty || brand.touched)">
+        <p *ngIf="brand?.errors?.['required']" [ngStyle]="{color:'red'}">Brand Required</p>
+    </div>
+
+      <!-- Gender -->
+      <div class="txt_field">
+        <input type="text" name="id" formControlName="gender" placeholder="Gender" required>
+                    <span></span>
+                 
+      </div>
+
+      <!-- Validators For Gender -->
+      <div class="valid"  *ngIf="gender.invalid && (gender.dirty || gender.touched)">
+        <p *ngIf="gender?.errors?.['required']" [ngStyle]="{color:'red'}">Gender Required</p>
+    </div>
+
+      <!-- Category -->
+      <div class="txt_field">
+        <input type="text" name="id" formControlName="category" placeholder="Category" required>
+                    <span></span>
+                    
+      </div>
+
+      <!-- validators For Category -->
+      <div class="valid"  *ngIf="category.invalid && (category.dirty || category.touched)">
+        <p *ngIf="category?.errors?.['required']" [ngStyle]="{color:'red'}">Category Required</p>
+    </div>
+
+
+    <!-- Size for Product -->
+      <div class="txt_field">
+        <input type="text" name="id" formControlName="size" placeholder="Size" required>
+                    <span></span>
+                  
+      </div>
+
+      <!-- Validators For Size -->
+      <div class="valid"  *ngIf="size.invalid && (size.dirty || size.touched)">
+        <p *ngIf="size?.errors?.['required']" [ngStyle]="{color:'red'}">Size Required</p>
+    </div>
+
+
+      <!-- Color Set For Product -->
+      <div  class="txt_field">
+        <input type="text" name="id" formControlName="color" placeholder="Color" required>
+                    <span></span>
+                    
+      </div>
+
+      <!-- Validators For Color -->
+      <div class="valid"  *ngIf="color.invalid && (color.dirty || color.touched)">
+        <p *ngIf="color?.errors?.['required']" [ngStyle]="{color:'red'}">Color Required</p>
+    </div>
+
+    <!-- Product Price -->
+      <div class="txt_field">
+        <input type="number" name="id" formControlName="price" placeholder="Price in Number" required>
+                    <span></span>
+                   
+      </div>
+
+      <!-- Validators For Price -->
+      <div class="valid"  *ngIf="price.invalid && (price.dirty || price.touched)">
+        <p *ngIf="price?.errors?.['required']" [ngStyle]="{color:'red'}">Price Required</p>
+    </div>
+
+      
+
+
+    <!-- Image URL -->
+      <div class="txt_field">
+        <input type="text" name="id" formControlName="imageURL" placeholder="Image Link" required>
+                    <span></span>
+                   
+      </div>
+
+      <!-- Validators For Image Url -->
+      <div class="valid"  *ngIf="image.invalid && (image.dirty || image.touched)">
+        <p *ngIf="image?.errors?.['required']" [ngStyle]="{color:'red'}">Image Url Required</p>
+    </div>
+
+  
+    <!-- Button for Product Detail Submission in database -->
+    <button type="submit" class="btn btn-success d-block mx-auto mt-3" value="Sign Up" [disabled]="Product.invalid">Register</button>
+    <button type="submit" class="btn btn-success d-block mx-auto mt-3" value="Sign Up" (click)="goToProduct()">All Product</button>
+  </form>
+  
+  </div>
+  </div>

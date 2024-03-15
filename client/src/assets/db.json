@@ -1,0 +1,46 @@
+{
+  "signup": [
+    {
+      "id": "43a8",
+      "name": "Saurabh Kumar",
+      "email": "saurabh.kr026@gmail.com",
+      "password": "123456",
+      "Phone Number": "9140336052"
+    },
+    {
+      "id": "9e92",
+      "name": "Archit Sharma",
+      "email": "archit@gmail.com",
+      "password": "abcde",
+      "Phone Number": "898998"
+    },
+    {
+      "id": "8441",
+      "name": "Gaurav Ojha",
+      "email": "abcde@gmail.com",
+      "password": "98765",
+      "Phone Number": "9140336053"
+    },
+    {
+      "id": "54af",
+      "name": "Abc",
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "Phone Number": "9140336053"
+    },
+    {
+      "id": "9a0e",
+      "name": "Saurabh",
+      "email": "1234@gmail.com",
+      "password": "123456",
+      "Phone Number": "1234567890"
+    },
+    {
+      "id": "7cab",
+      "name": "saurabh",
+      "email": "saurab@gmail.com",
+      "password": "123456",
+      "Phone Number": "1234567890"
+    }
+  ]
+}

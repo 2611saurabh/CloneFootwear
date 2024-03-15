@@ -1,0 +1,19 @@
+<div class="ekart--product--item" appHighlight>
+    <div class="ekart-wishlist-sale-container">
+        <div class="ekart--add--to--wishlist">
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+
+      </div>
+      <div class="ekart--product--image">
+          <img [src]="product.imageURL" class="ekart--product--image" alt="">
+      </div>
+      <div class="ekart--add--to--price">
+          {{product.price}}
+      </div>
+      <div class="ekart--product--name">{{product.name}}</div>
+      <div class="ekart--product--category">{{product.gender}} . {{product.category}} . {{product.brand}}</div>
+      <div class="ekart--product--available-colors">{{product.color}} Colors . Best Seller</div>
+     
+      <button class="btn-add-to-cart"  (click)=" onDelete(product._id)">Delete</button>
+</div>

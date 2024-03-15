@@ -1,0 +1,15 @@
+<div class="ekart--product--container">
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+   
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    
+    <product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListCompoment"></product-detail>
+    
+    <div class="ekar-featured-products">
+        <div class="ekart-featured-product-heading">
+            <h1>Latest Arrival in Popular Brands</h1>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,30 @@
+
+<div class="wrapper" >
+  <h1>Shopping Cart</h1>
+  <div class="project">
+    <div class="shop">
+      <div *ngIf="cartItem.length === 0"><p class="cartempty">Your Cart is empty</p></div>
+      <div class="box"  *ngFor="let product of cartItem; let i = index">
+        <img class="img-cls" [src]="product.imageURL" alt="Avatar" alt="">
+        <div class="content">
+          <h4>{{product.name}}</h4>
+          <h6>Rs:  {{product.price}}</h6>
+          <h6>{{product.category}}</h6>
+          <h6>{{product.gender}}</h6>
+          <button (click)="removeItem(product._id)">Delete</button>
+        </div>
+      </div>
+     
+    </div>
+    <div class="right-bar">
+      <!-- <p><span>Product Price: Rs</span> <span> {{totalPrice()}}</span></p> -->
+      <!-- <hr>
+      <p><span>Discount Percentage </span> <span> 5 %</span></p>
+      <hr> -->
+      <p><span>Total Price </span> <span>{{totalPrice()}}</span></p>
+      <hr class="total"> 
+      <button (click)="checkOut()">Checkout</button>
+      <button (click)="goToProduct()">Back</button>
+    </div>
+  </div>
+</div>
